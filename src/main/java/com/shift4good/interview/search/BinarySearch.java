@@ -1,5 +1,9 @@
 package com.shift4good.interview.search;
 
+import java.util.Collections;
+
+import com.shift4good.interview.sort.Sort;
+
 public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
 	private T data[];
 
@@ -25,9 +29,10 @@ public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
 	}
 
 	public static void main(String args[]) {
-		Integer[] arr = { 1, 5, 7, 10, 12, 13, 23, 34, 57, 92, 100, 101, 120, 121 };
+		Integer[] arr = { 10, 5, 7, 1, 12, 13, 3, 24, 57, 92, 100, 101, 120, 121 };
+		arr=Sort.execSort(arr);
 		Searchable<Integer> bs = new BinarySearch<Integer>(arr);
-		System.out.println("Element: 34 found " + "at index: " + bs.search(new Integer(34)));
+		System.out.println("Element: 1 found " + "at index: " + bs.search(new Integer(1)));
 		String[] strArr = { "ab", "bc", "cd", "ef", "mq", "top" };
 		Searchable<String> bStr = new BinarySearch<String>(strArr);
 		System.out.println("Element: ef found " + "at index: " + bStr.search(new String("ef")));

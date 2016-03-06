@@ -1,4 +1,4 @@
-package com.shift4good.interview.Tree;
+package com.shift4good.interview.tree;
 
 public class Node<T> {
 	T data;

@@ -1,7 +1,5 @@
 package com.shift4good.interview.search;
 
-import java.util.Comparator;
-
 public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
 	private T data[];
 

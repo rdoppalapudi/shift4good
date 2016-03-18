@@ -1,0 +1,42 @@
+{
+    "name": "APPLICATION",
+    "production_artifact_url": "http://abc.ask.com/~test/arsenal2/117/build/ARSENAL2.zip",
+    "artifacts": [{
+        "1": {
+            "remote-location": "http://abc.ask.com/~classifiers/arsenal2/1/arsenal2_20140715_1605.pkl",
+            "local-location": "src/models/arsenal2_model.pkl"
+        },
+        "2": {
+            "remote-location": "http://abc.ask.com/~classifiers/arsenal2/1/idfStem.txt",
+            "local-location": "src/models/idfStem.txt"
+        },
+        "3": {
+            "remote-location": "http://abc.ask.com/~classifiers/arsenal2/1/idfNoStem.txt",
+            "local-location": "src/models/idfNoStem.txt"
+        }
+    }],
+    "distribute": "True",
+    "version": "40",
+    "services": [{
+        "min_workers": "1",
+        "Name": "arsenal2",
+        "language": "python",
+        "max_workers": "1",
+        "denisity_score": "1",
+        "cmd": "python",
+        "ram_size": "100",
+        "instances": "2",
+        "dependencies": [
+            "simplejson==3.3.0",
+            "numpy==1.8.1",
+            "scipy==0.13.3",
+            "scikit-learn==0.14.1",
+            "requests>=2.2"
+        ],
+        "respawn_timeout": "5",
+        "python_env": "python2.7",
+        "execpath": "src/arsenal2_tram.py",
+        "scale_profile": "static"
+    }],
+    "router": "tram/routes.js"
+}
